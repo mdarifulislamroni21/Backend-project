@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BACK-END</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'registration' %}">Registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'buyproduct' %}">Shop</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active" href="{% url 's_user' %}" >User</a>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'flogin' %}" tabindex="-1" aria-disabled="true">F-User</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">F-Registration</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'user_logout' %}" tabindex="-1" aria-disabled="true">LogOut</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'profile' %}" tabindex="-1" aria-disabled="true">Profile</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'user_login' %}" tabindex="-1" aria-disabled="true">LogIn</a>
+            </li>
+            {% endif %}
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+    {% block body_block %}
+
+
+    {% endblock %}
+
+
+  </body>
+</html>

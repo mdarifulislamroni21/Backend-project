@@ -1,0 +1,11 @@
+{% extends 'base/body.html' %}
+{% block body_block %}
+
+<h1 class="headh1">Are You Sure Delete </h1>
+<form class="" action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" name="submit" class="btn btn-danger btn-sm" value="Delete">
+  <a class="btn btn-danger btn-sm" href="{% url 's_user' %}">Cencel</a>
+</form>
+
+{% endblock %}

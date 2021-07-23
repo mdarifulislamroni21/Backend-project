@@ -1,0 +1,53 @@
+form {
+    width: 600px;
+    margin: auto;
+}
+input {
+    width: 100%;
+    padding: 10px 5px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+/* button {
+    border: 1px solid grey;
+    padding: 8px 30px;
+    border-radius: 5px;
+    background-color: cadetblue;
+    color: white;
+    font-size: 20px;
+} */
+.alert{
+  width: 600px;
+  margin: 20px auto;
+
+}
+
+td{
+  padding: 15px ;
+  border:2px solid black;
+}
+table{
+  margin: 40px auto;
+  max-width: 700px;
+}
+.headtr td{
+  font-size: 25px;
+  font-weight: 500;
+
+}
+.views_user td{
+  width: 100%;
+}
+.user_views_style{
+  font-size: 25px;
+  font-weight: 500;
+}
+section.profile {
+    text-align: center;
+}

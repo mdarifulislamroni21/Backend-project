@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+{% extends 'base/body.html' %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+<title>Buy A new Product Here | django Backend development</title>
+<h1 class="headh1">Registration</h1>
+<section>
+{% if submit_success  %}
+<div class="alert alert-success">
+  {{ submit_success }}
+</div>
+{% endif %}
+  <form class="" action="" method="POST">
+     {{ main_user_form.as_p }}
+     {% csrf_token %}
+     <hr>
+     <button type="submit" name="button">Registration</button>
+  </form>
+</section>
+{% endblock %}

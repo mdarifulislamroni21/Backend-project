@@ -1,0 +1,22 @@
+
+{% extends 'base/body.html' %}
+{% block body_block %}
+
+<h1 class="headh1">List View</h1>
+<section>
+  <table>
+    <tr>
+      <td>User </td>
+      <td> Phone Namber </td>
+      <td> Facebook </td>
+    </tr>
+    {% for all in UsersInfo %}
+    <tr>
+      <td>{{ all.user  }}<a class="btn btn-info btn-sm m-2" href="{% url 'details_view' pk=all.pk %}">Details</a></td>
+      <td>{{ all.phone_no  }}</td>
+      <td><a href="{{ all.facebook_id  }}">Facebook</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{% endblock %}

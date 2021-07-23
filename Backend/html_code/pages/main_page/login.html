@@ -1,0 +1,17 @@
+{% extends 'base/body.html' %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+<h1 class="headh1">Log In</h1>
+<section>
+  <form class="" action="{% url 'login_check' %}" method="POST">
+    <label for="username">User Name</label>
+    <input type="text" name="username" placeholder="Enter Your Username" required>
+    <label for="password">Password</label>
+    <input type="text" name="password" placeholder="Enter Your Password" required>
+    {% csrf_token %}
+    <hr>
+    <button type="submit" name="button">Log In</button>
+  </form>
+</section>
+{% endblock %}

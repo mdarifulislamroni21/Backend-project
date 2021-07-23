@@ -1,0 +1,15 @@
+{% extends 'base/body.html' %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+<h1 class="headh1">Profile</h1>
+<section class="profile">
+  <h1>{{ defult_users.username }}</h1>
+  <h4>{{ defult_users.email }}</h4>
+  <hr>
+  <h4>{{ make_user_pass.phone_no }}</h4>
+  <h4><a href="{{ make_user_pass.facebook_id }}">Facebook</a></h4>
+  <img style="width:200px" src="/media/{{ make_user_pass.profile_pic }}" alt="Proifile">
+
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base/body.html' %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+
+<h1 class="headh1">View User</h1>
+<section>
+  <h2 style="padding-left:20px">{{ main_user_data.user_name }} <a href="{% url 'edid_user' user_ids=main_user_data.id %}">Edid</a></h2>
+  <hr>
+
+  <table >
+    <tr class="views_user user_views_style">
+      <td>Product</td>
+      <td>Price</td>
+    </tr>
+    {% for user in buyproduct_data %}
+    <tr class="views_user">
+      <td>{{ user.product }} <a href="{% url 'edid_product' product_id=user.id %}" class="btn btn-info btn-sm">Edid</a> <a class="btn btn-danger btn-sm" href="{% url 'delete_product' pk=user.pk %}">Delete</a></td>
+      <td>{{ user.price }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</section>
+{% endblock %}
